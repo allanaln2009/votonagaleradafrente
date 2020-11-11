@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { setGlobal, useGlobal } from 'reactn';
+import { useGlobal } from 'reactn';
 
 import { Dropdown } from 'semantic-ui-react';
 
@@ -15,7 +15,7 @@ const DropdownCustom = ({ placeholder, urlLoadData, selectGlobalItem, mapFunctio
 
   const getData = async () => {
     const data = await fetchData(urlLoadData);
-    const mapped = mapFunction(data);
+    const mapped = await mapFunction(data);
 
     setItems(mapped);
     setIsLoaded(true);
